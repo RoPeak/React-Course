@@ -9,7 +9,7 @@ export default function MovieCard({ movie }) {
   const getRatingClass = (rating) => {
     if (rating >= 8) {
       return "rating-good";
-    } else if (rating >= 5) {
+    } else if (rating < 8 && rating >= 5) {
       return "rating-okay";
     } else {
       return "rating-bad";
@@ -19,7 +19,7 @@ export default function MovieCard({ movie }) {
   return (
     <div key={movie.id} className="movie-card">
       <img
-        src={`images/${movie.img}`}
+        src={`images/${movie.id}.jpg`}
         alt={movie.title}
         onError={handleError}
       />
